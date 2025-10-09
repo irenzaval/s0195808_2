@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Адаптивный сайт на Bootstrap</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+<style>
+.custom-header {
+background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+}
+
+.logo-img {
+width: 50px;
+height: 50px;
+border-radius: 8px;
+}
+
+.nav-custom .nav-link {
+color: white !important;
+font-weight: 500;
+padding: 0.5rem 1rem;
+border-radius: 6px;
+transition: all 0.3s ease;
+}
+
+.nav-custom .nav-link:hover {
+background-color: rgba(255, 255, 255, 0.1);
+transform: translateY(-2px);
+}
+
+.table-custom th {
+background-color: #3498db;
+color: white;
+border: none;
+}
+
+.table-custom tbody tr:nth-child(even) {
+background-color: #f8f9fa;
+}
+
+.table-custom tbody tr:hover {
+background-color: #e3f2fd;
+}
+
+.links-list-custom li {
+border-left: 4px solid #3498db;
+transition: all 0.3s ease;
+}
+
+.links-list-custom li:hover {
+background-color: #e3f2fd;
+transform: translateX(5px);
+}
+
+.form-custom .form-control:focus {
+border-color: #3498db;
+box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+.btn-custom {
+background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+border: none;
+padding: 0.75rem 2rem;
+font-weight: 600;
+transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+transform: translateY(-2px);
+box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+.footer-custom {
+background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+@media (max-width: 768px) {
+.mobile-order-1 {
+order: 1;
+}
+
+.mobile-order-2 {
+order: 2;
+}
+
+.mobile-order-3 {
+order: 3;
+}
+}
+</style>
+</head>
+<body>
+<!-- Header -->
+<header class="custom-header text-white">
+<div class="container">
+<div class="row align-items-center py-3">
+<!-- Логотип и название сайта -->
+<div class="col-12 col-md-3 text-center text-md-start">
+<div class="d-flex align-items-center justify-content-center justify-content-md-start">
+<img src="https://via.placeholder.com/50x50/3498db/ffffff?text=Logo" alt="Логотип" class="logo-img me-3">
+<h1 class="h4 mb-0 d-none d-md-block">Название сайта</h1>
+</div>
+</div>
+
+<!-- Название сайта для мобильных -->
+<div class="col-12 d-md-none text-center mt-2">
+<h1 class="h4 mb-0">Название сайта</h1>
+</div>
+
+<!-- Навигация -->
+<div class="col-12 col-md-9 mt-3 mt-md-0">
+<nav class="nav-custom">
+<ul class="nav justify-content-center justify-content-md-end">
+<li class="nav-item">
+<a class="nav-link" href="#link1">
+<i class="bi bi-link-45deg me-1"></i>Ссылка меню 1
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#link2">
+<i class="bi bi-link-45deg me-1"></i>Ссылка 2
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#link3">
+<i class="bi bi-link-45deg me-1"></i>Ссылка 3
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="py-4">
+<div class="container">
+<div class="row g-4">
+<!-- Таблица - на мобильных показывается первой -->
+<div class="col-12 mobile-order-1">
+<div class="card shadow-sm">
+<div class="card-header bg-primary text-white">
+<h2 class="h5 mb-0">
+<i class="bi bi-table me-2"></i>Таблица товаров
+</h2>
+</div>
+<div class="card-body p-0">
+<div class="table-responsive">
+<table class="table table-custom table-hover mb-0">
+<thead>
+<tr>
+<th>ID</th>
+<th>Наименование</th>
+<th>Категория</th>
+<th>Цена</th>
+<th>Количество</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ноутбук ASUS</td>
+<td>Электроника</td>
+<td>50000 ₽</td>
+<td>15</td>
+<td><span class="badge bg-success">В наличии</span></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Смартфон Samsung</td>
+<td>Электроника</td>
+<td>25000 ₽</td>
+<td>8</td>
+<td><span class="badge bg-success">В наличии</span></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Наушники Sony</td>
+<td rowspan="2">Аксессуары</td>
+<td>15000 ₽</td>
+<td>0</td>
+<td><span class="badge bg-danger">Нет в наличии</span></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Чехол для телефона</td>
+<td>1500 ₽</td>
+<td>25</td>
+<td><span class="badge bg-success">В наличии</span></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Клавиатура Logitech</td>
+<td>Периферия</td>
+<td>4500 ₽</td>
+<td>12</td>
+<td><span class="badge bg-success">В наличии</span></td>
+</tr>
+<tr class="table-info">
+<td colspan="3"><strong>Итого товаров:</strong></td>
+<td><strong>96000 ₽</strong></td>
+<td><strong>60</strong></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Список ссылок - на мобильных показывается второй -->
+<div class="col-12 mobile-order-2">
+<div class="card shadow-sm">
+<div class="card-header bg-primary text-white">
+<h2 class="h5 mb-0">
+<i class="bi bi-list-ul me-2"></i>Маркированный список гиперссылок
+</h2>
+</div>
+<div class="card-body">
+<ul class="list-group list-group-flush links-list-custom">
+<li class="list-group-item">
+<a href="http://kubsu.ru" class="text-decoration-none">
+<i class="bi bi-box-arrow-up-right me-2"></i>Абсолютная ссылка на kubsu.ru
+</a>
+</li>
+<li class="list-group-item">
+<a href="https://kubsu.ru" class="text-decoration-none">
+<i class="bi bi-shield-lock me-2"></i>Абсолютная ссылка на kubsu.ru (https)
+</a>
+</li>
+<li class="list-group-item">
+<a href="https://kubsu.ru" class="text-decoration-none">
+<img src="https://via.placeholder.com/100x50/3498db/ffffff?text=Img" alt="Ссылка-изображение" class="img-fluid me-2" style="max-height: 30px;">
+Ссылка-изображение
+</a>
+</li>
+<li class="list-group-item">
+<a href="/internal-page" class="text-decoration-none">
+<i class="bi bi-link me-2"></i>Сокращенная ссылка на внутреннюю страницу
+</a>
+</li>
+<li class="list-group-item">
+<a href="/" class="text-decoration-none">
+<i class="bi bi-house me-2"></i>Сокращенная ссылка на главную страницу
+</a>
+</li>
+<li class="list-group-item">
+<a href="#fragment" class="text-decoration-none">
+<i class="bi bi-bookmark me-2"></i>Ссылка на фрагмент текущей страницы
+</a>
+</li>
+<li class="list-group-item">
+<a href="/page?param1=value1&param2=value2&param3=value3" class="text-decoration-none">
+<i class="bi bi-three-dots me-2"></i>Ссылка с тремя параметрами
+</a>
+</li>
+<li class="list-group-item">
+<a href="/page?id=123" class="text-decoration-none">
+<i class="bi bi-hash me-2"></i>Ссылка с параметром id
+</a>
+</li>
+<li class="list-group-item">
+<a href="current-page.html" class="text-decoration-none">
+<i class="bi bi-file-earmark me-2"></i>Относительная ссылка в текущем каталоге
+</a>
+</li>
+<li class="list-group-item">
+<a href="about/page.html" class="text-decoration-none">
+<i class="bi bi-folder me-2"></i>Относительная ссылка в каталоге about
+</a>
+</li>
+<li class="list-group-item">
+<a href="../page.html" class="text-decoration-none">
+<i class="bi bi-arrow-up me-2"></i>Относительная ссылка уровнем выше
+</a>
+</li>
+<li class="list-group-item">
+<a href="../../page.html" class="text-decoration-none">
+<i class="bi bi-arrow-up-up me-2"></i>Относительная ссылка двумя уровнями выше
+</a>
+</li>
+<li class="list-group-item">
+Это <a href="/link" class="text-decoration-none">контекстная ссылка</a> в тексте абзаца
+</li>
+<li class="list-group-item">
+<a href="https://example.com/page#section" class="text-decoration-none">
+<i class="bi bi-box-arrow-up-right me-2"></i>Ссылка на фрагмент стороннего сайта
+</a>
+</li>
+<li class="list-group-item">
+<div class="d-flex align-items-center">
+<img src="https://via.placeholder.com/300x100/3498db/ffffff?text=Image+Map" alt="Карта-изображение" class="img-fluid me-3" style="max-width: 200px;">
+<div>
+<small class="text-muted">Карта-изображение с областями</small>
+</div>
+</div>
+</li>
+<li class="list-group-item">
+<a href="" class="text-decoration-none text-muted">
+<i class="bi bi-link-45deg me-2"></i>Ссылка с пустым href
+</a>
+</li>
+<li class="list-group-item">
+<span class="text-muted">
+<i class="bi bi-link me-2"></i>Ссылка без href
+</span>
+</li>
+<li class="list-group-item">
+<a href="/no-follow" rel="nofollow" class="text-decoration-none">
+<i class="bi bi-shield-exclamation me-2"></i>Ссылка с запретом перехода для поисковиков
+</a>
+</li>
+<li class="list-group-item">
+<a href="/no-index" rel="noindex" class="text-decoration-none">
+<i class="bi bi-eye-slash me-2"></i>Ссылка, запрещенная для индексации
+</a>
+</li>
+<li class="list-group-item">
+<ol class="mb-0">
+<li><a href="/link1" title="Подпись к первой ссылке" class="text-decoration-none">Ссылка 1</a></li>
+<li><a href="/link2" title="Подпись ко второй ссылке" class="text-decoration-none">Ссылка 2</a></li>
+<li><a href="/link3" title="Подпись к третьей ссылке" class="text-decoration-none">Ссылка 3</a></li>
+</ol>
+</li>
+<li class="list-group-item">
+<a href="ftp://user:password@ftp.example.com/file.txt" class="text-decoration-none">
+<i class="bi bi-hdd-stack me-2"></i>Ссылка на файл на сервере FTP с авторизацией
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Фрагмент страницы -->
+<div class="col-12 mobile-order-3">
+<div class="card shadow-sm">
+<div class="card-body">
+<h2 id="fragment" class="h5 card-title">
+<i class="bi bi-bookmark-fill me-2"></i>Фрагмент страницы
+</h2>
+<p class="card-text">Это целевой фрагмент для ссылки №6. При клике на соответствующую ссылку в списке выше, страница прокрутится к этому разделу.</p>
+</div>
+</div>
+</div>
+
+<!-- Форма - на мобильных показывается последней -->
+<div class="col-12 mobile-order-3">
+<div class="card shadow-sm">
+<div class="card-header bg-primary text-white">
+<h2 class="h5 mb-0">
+<i class="bi bi-pencil-square me-2"></i>Форма регистрации
+</h2>
+</div>
+<div class="card-body">
+<form class="form-custom">
+<div class="row g-3">
+<div class="col-12">
+<label for="fio" class="form-label">ФИО *</label>
+<input type="text" class="form-control" id="fio" required>
+</div>
+
+<div class="col-12 col-md-6">
+<label for="phone" class="form-label">Телефон *</label>
+<input type="tel" class="form-control" id="phone" required>
+</div>
+
+<div class="col-12 col-md-6">
+<label for="email" class="form-label">E-mail *</label>
+<input type="email" class="form-control" id="email" required>
+</div>
+
+<div class="col-12 col-md-6">
+<label for="birthdate" class="form-label">Дата рождения *</label>
+<input type="date" class="form-control" id="birthdate" required>
+</div>
+
+<div class="col-12 col-md-6">
+<label class="form-label">Пол *</label>
+<div class="d-flex gap-3">
+<div class="form-check">
+<input class="form-check-input" type="radio" name="gender" id="male" required>
+<label class="form-check-label" for="male">Мужской</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="radio" name="gender" id="female">
+<label class="form-check-label" for="female">Женский</label>
+</div>
+</div>
+</div>
+
+<div class="col-12">
+<label for="programming-languages" class="form-label">Любимый язык программирования</label>
+<select class="form-select" id="programming-languages" multiple size="4">
+<option value="pascal">Pascal</option>
+<option value="c">C</option>
+<option value="cpp">C++</option>
+<option value="javascript">JavaScript</option>
+<option value="php">PHP</option>
+<option value="python">Python</option>
+<option value="java">Java</option>
+<option value="haskel">Haskel</option>
+<option value="clojure">Clojure</option>
+<option value="prolog">Prolog</option>
+<option value="scala">Scala</option>
+</select>
+<div class="form-text">Для множественного выбора удерживайте Ctrl (Cmd на Mac)</div>
+</div>
+
+<div class="col-12">
+<label for="bio" class="form-label">Биография</label>
+<textarea class="form-control" id="bio" rows="4"></textarea>
+</div>
+
+<div class="col-12">
+<div class="form-check">
+<input class="form-check-input" type="checkbox" id="agreement" required>
+<label class="form-check-label" for="agreement">
+С контрактом ознакомлен(а) *
+</label>
+</div>
+</div>
+
+<div class="col-12">
+<button type="submit" class="btn btn-custom text-white">
+<i class="bi bi-check-circle me-2"></i>Сохранить
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="footer-custom text-white py-4 mt-5">
+<div class="container">
+<div class="row">
+<div class="col-12 text-center">
+<p class="mb-0">&copy; 2024 Сергей Синица. Все права защищены.</p>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
